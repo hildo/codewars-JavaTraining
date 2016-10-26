@@ -42,7 +42,7 @@ public class OddDigPrime {
     
     private static boolean hasOnlyOddDigits(long number) {
         int[] digits = String.valueOf(number).chars()
-                .map(c -> Character.digit(c, 10))
+                .map(c -> Character.getNumericValue(c))
                 .toArray();
         return Arrays.stream(digits).allMatch(i -> i % 2 != 0);
     }
